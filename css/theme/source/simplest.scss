@@ -1,0 +1,191 @@
+$dark-gray: #3f3f3f;
+$gw-dark-blue: #003478;
+$gw-light-blue: #0073cf;
+
+@import '../template/mixins';
+@import '../template/settings';
+
+$backgroundColor: #fff;
+$mainFont: 'Lato', sans-serif;
+$mainFontSize: 36px;
+$mainColor: #000;
+$selectionColor: #fff;
+$selectionBackgroundColor: $gw-light-blue;
+
+$blockMargin: 20px;
+$headingFont: 'News Cycle', Impact, sans-serif;
+$headingColor: #000;
+$headingLineHeight: .9em;
+$headingLetterSpacing: .02em;
+$headingTextTransform: none;
+$headingTextShadow: none;
+$headingFontWeight: normal;
+$heading1TextShadow: 0 0 6px rgba(0, 0, 0, .2);
+
+$codeFont: 'Liga Meslo LG S', Menlo, Monaco, Consolas, 'Lucida Console', 'Courier New', monospace;
+
+$linkColor: $gw-dark-blue;
+$linkColorHover: $gw-light-blue;
+
+@import '../template/theme';
+
+@import url('https://fonts.googleapis.com/css?family=News+Cycle:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+
+@mixin code {
+  $color: #f0efe8;
+  background-color: $color;
+  border: 1px solid darken($color, 20%);
+  border-radius: 3px;
+}
+highlight {
+  text-shadow: 0 0 10px $gw-light-blue, 0 0 10px $gw-light-blue, 0 0 10px $gw-light-blue, 0 0 10px $gw-light-blue, 0 0 10px $gw-light-blue, 0 0 10px $gw-light-blue;
+}
+selection {
+  background: $selectionBackgroundColor;
+}
+.reveal {
+  &.overview {
+    .slides {
+      section {
+        &.present {
+          outline-color: $gw-light-blue;
+        }
+      }
+    }
+  }
+  h2 {
+    margin-bottom: .5em;
+  }
+  h3 {
+    line-height: inherit;
+  }
+  a {
+    transition-duration: .5s;
+
+    &:hover {
+      img {
+        background: rgba(255, 255, 255, .2);
+        border-color: $gw-light-blue;
+        box-shadow: 0 0 20px rgba(0, 0, 0, .55);
+      }
+    }
+  }
+  section {
+    &.image {
+      padding: 0 !important;
+
+      img {
+        margin: 0;
+        min-width: 100%;
+      }
+    }
+    img {
+      background: none;
+      border: 0;
+      box-shadow: none;
+      transition: box-shadow .5s ease;
+    }
+  }
+
+  code,
+  pre {
+    font-size: .92em;
+    line-height: 2.4rem;
+  }
+  pre {
+    &::selection {
+      @extend selection;
+    }
+    ::selection {
+      @extend selection;
+    }
+  }
+  code {
+    @include code;
+    padding: .05em .1em;
+  }
+  p {
+    code {
+      display: inline-block;
+    }
+  }
+
+  pre {
+    @media print {
+      @include code;
+      color: $mainColor;
+      overflow: hidden;
+    }
+
+    background-color: $dark-gray;
+    color: $backgroundColor;
+    // overflow: auto;
+    padding: 15px;
+    width: auto;
+    word-wrap: normal;
+
+    .highlight {
+      @media print {
+        color: $mainColor;
+        text-decoration: underline;
+        text-shadow: none;
+      }
+
+      @extend highlight;
+    }
+
+    code {
+      max-height: initial;
+      background-color: $dark-gray;
+      border: none;
+    }
+
+    a {
+      @media print {
+        color: $mainColor;
+      }
+
+      color: $backgroundColor;
+    }
+  }
+
+  .hljs-comment {
+    color: limegreen;
+  }
+
+  .hljs-meta {
+    color: inherit;
+  }
+
+  blockquote {
+    margin-top: 3em;
+    text-align: left;
+    width: 80%;
+  }
+
+  .inline-images {
+    img {
+      height: 1em;
+      margin: 0;
+      vertical-align: bottom;
+    }
+    a {
+      &:hover {
+        img {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+@media print {
+  .print-pdf {
+    .reveal {
+      .slide-background {
+        background-color: inherit !important;
+      }
+    }
+  }
+};
