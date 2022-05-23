@@ -455,6 +455,7 @@ class FakeNotifications : ISendNotifications {
 }
 
 var notification = new FakeNotifications();
+notification.Send("hello, world");
 Assert.IsTrue(notification.WasSent);
 ```
 
