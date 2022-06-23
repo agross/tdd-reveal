@@ -573,7 +573,7 @@ I am given the chance to log in
 
 ```csharp
 [Test]
-public void shouldBeAbleToLogInToSeeTheDashboard()
+public void Should_be_able_to_log_in_to_see_the_dashboard()
 {
   authorization.LogOut();
   controlling.VisitTheDashboard();
