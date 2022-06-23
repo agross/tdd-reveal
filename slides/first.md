@@ -808,10 +808,4 @@ Sometimes tables are *less* expressive.
 
 [An example](https://specflow.org/bdd/a-bdd-journey-with-specflow/)
 
-Alex, execute this:
-
-```bash
-code ~/Downloads/TestStyles/NameValidation-1.feature
-```
-
 </section>
