@@ -496,6 +496,8 @@ A.CallTo(() => notifications.Send(A<string>.Ignored))
 <section>
 
 # Test Styles
+
+[Examples](https://github.com/agross/test-styles)
 </section>
 
 ---
