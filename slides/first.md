@@ -642,7 +642,7 @@ Then "scott" can access their accounts
 ### Long-Running Specifications
 
 ```gherkin
-Scenario: Bus Edit Saving a bus should have attributes
+Scenario: Saving a bus should have attributes
           saved and return to bus list
 Given I am logged in as "bmfs-admin"
 And I verify data exists for testing
