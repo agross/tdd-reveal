@@ -411,8 +411,8 @@ Trace.Assert(42 == 42);
 // Included in your testing framework.
 Assert.AreEqual(expected, actual);
 
-// Separate library: fluentassertions.com
-actual.Should().Be(expected);
+// Separate library: Shouldly.
+actual.ShouldBe(expected);
 ```
 
 </section>
