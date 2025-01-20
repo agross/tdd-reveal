@@ -515,7 +515,7 @@ Focus on the *What*, not on the *How*.
 
 1. Are written from the perspective of an external user of the system.
 1. Evaluate the system in life-like scenarios.
-1. Are evaluated in [production-like test environments](https://github.com/mariotoffia/FluentDocker).
+1. Are evaluated in [production-like test environments](https://testcontainers.com/).
 1. Interact with the System under Test (SUT) through public interfacess.
 1. Focus on the *What*, not on the *How*.
 1. Work best with other forms of test automation.
